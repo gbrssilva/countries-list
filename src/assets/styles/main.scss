@@ -1,0 +1,79 @@
+@import '~normalize.css';
+
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+body > * {
+    font-family: 'Lato', sans-serif;
+}
+
+.btn {
+    color: #ffffff;
+    padding: 5px;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+    border-radius: 2px;
+    margin-right: 5px;
+    border: none;
+    background: transparent;
+
+    &.active {
+        background: #828282;
+    }
+
+    &:hover {
+        background: #5c5c5c;
+    }
+
+    &.disabled {
+        color: #5c5c5c;
+        cursor: not-allowed;
+
+        &:hover {
+            background-color: transparent;
+            color: #5c5c5c;
+        }
+    }
+
+    i:not(:only-child) {
+        margin-right: 10px;
+    }
+
+    &:last-child {
+        margin-right: 0px;
+    }
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: default;
+
+    &-content {
+        display: none;
+        position: absolute;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        right: 0;
+    }
+
+    &-item {
+        background: #5c5c5c;
+        display: block;
+        padding: 4px 14px;
+        cursor: pointer;
+        transition: all 0.25s ease-in-out;
+
+        &:hover {
+            background: #828282;
+        }
+    }
+
+    &.open,
+    &:hover {
+        .dropdown-content {
+            display: block;
+        }
+    }
+}
